@@ -66,6 +66,19 @@ fsm.trigger?(:reset)   #=> true
 fsm.state              #=> :ignored
 ~~~~
 
+## Actions
+
+Adding actions to a transition is trivial:
+
+~~~~
+fsm.when(:confirm, new: :confirmed) { |event| count += 1 }
+fsm.when(:confirm, new: :confirmed) { |event| foo(event) }
+~~~~
+
+Two actions/callbacks are triggered in the previous example.
+
+
+## Miscellaneous
 
 Finally, you can list possible events or states:
 
