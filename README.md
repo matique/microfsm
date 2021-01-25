@@ -1,4 +1,8 @@
-# MicroFSM
+MicroFSM
+========
+
+[![Gem Version](https://badge.fury.io/rb/micrfsm.svg)](https://badge.fury.io/rb/microfsm)
+[![Build Status](https://travis-ci.org/matique/microfsm.svg?branch=master)](https://travis-ci.org/matique/microfsm)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
 Transitions are triggered by events.
@@ -15,7 +19,8 @@ No magic, no niceties, just an implementation using Ruby hashes.
 Check the examples directory for more information.
 
 
-## Installation
+Installation
+------------
 
 ~~~~
 # Gemfile
@@ -28,7 +33,8 @@ $ bundle install.
 $ [sudo] gem install microfsm
 ~~~~
 
-## Usage
+Usage
+-----
 
 ~~~~
 require 'microfsm'
@@ -66,7 +72,8 @@ fsm.trigger?(:reset)   #=> true
 fsm.state              #=> :ignored
 ~~~~
 
-## Actions
+Actions
+-------
 
 Adding actions to a transition is trivial:
 
@@ -78,7 +85,8 @@ fsm.when(:confirm, new: :confirmed) { |event| foo(event) }
 Two actions/callbacks are triggered in the previous example.
 
 
-## Miscellaneous
+Miscellaneous
+-------------
 
 Finally, you can list possible events or states:
 
@@ -95,7 +103,8 @@ fsm.states #=> [:new, :confirmed, :ignored]
 
 Check the examples directory for more information.
 
-## Links
+Links
+-----
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)
 - [micromachine](https://github.com/soveran/micromachine)
