@@ -1,0 +1,10 @@
+language: ruby
+
+bundle config set without production
+script: "bundle exec rake test"
+
+rvm:
+   - 2.7.2  # 2020-10-26
+
+notifications:
+  email: false
