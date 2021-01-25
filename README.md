@@ -19,7 +19,7 @@ Check the examples directory for more information.
 
 ~~~~
 # Gemfile
-gem "wysiwyg-rails"
+gem "microfsm"
 
 $ bundle install.
 
