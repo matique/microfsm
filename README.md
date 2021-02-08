@@ -13,11 +13,8 @@ Finite-State Machine are described elsewhere, e.g. Wikipedia.
 Several FSM implementations are available for Ruby.
 Please feel free to use any of them if they fit better to your work.
 
-The MicroFSM code consists of less than 70 locs.
+The MicroFSM code consists of less than 100 locs.
 No magic, no niceties, just an implementation using Ruby hashes.
-
-Check the examples directory for more information.
-
 
 Installation
 ------------
@@ -59,8 +56,8 @@ fsm.trigger(:ignore)   #=> true
 fsm.state              #=> :ignored
 ~~~~
 
-You can also ask if an event will trigger a change in state. Following
-the example above:
+You can also ask if an event will trigger a change in state.
+Following the example above:
 
 ~~~~
 fsm.state              #=> :ignored
@@ -99,6 +96,13 @@ fsm.triggerable_events #=> [:confirm, :ignore]
 
 # All possible states
 fsm.states #=> [:new, :confirmed, :ignored]
+~~~~
+
+And, the state can be set (which may be useful for testing purposes):
+
+~~~~
+fsm.state = :new
+fsm.state              #=> :new
 ~~~~
 
 Check the examples directory for more information.

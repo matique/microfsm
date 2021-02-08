@@ -62,4 +62,11 @@ describe MicroFSM do
       fsm.when(:trigger, init: :wrong)
     end
   end
+
+  def test_state_assign
+    new_state = :unknown
+    refute_equal new_state, fsm.state
+    fsm.state = new_state
+    assert_equal new_state, fsm.state
+  end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microfsm (0.0.1)
+    microfsm (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -17,7 +17,7 @@ GEM
     rake (13.0.3)
     regexp_parser (2.0.3)
     rexml (3.2.4)
-    rubocop (1.8.1)
+    rubocop (1.9.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -38,7 +38,7 @@ GEM
     unicode-display_width (2.0.0)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bundler
@@ -50,4 +50,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.1.4
+   2.2.6

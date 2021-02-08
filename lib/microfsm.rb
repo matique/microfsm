@@ -34,11 +34,11 @@ class MicroFSM
 
   def trigger!(event)
     trigger(event) or
-      raise InvalidState.new("Event '#{event}' not valid from state '#{@state}'")
+      raise InvalidState.new(msg(event))
   end
 
   def trigger?(event)
-    raise InvalidEvent unless @transitions_for.has_key?(event)
+    raise InvalidEvent.new(msg(event)) unless @transitions_for.has_key?(event)
 
     @transitions_for[event].has_key?(state)
   end
@@ -55,11 +55,19 @@ class MicroFSM
     @transitions_for.values.map(&:to_a).flatten.uniq.sort
   end
 
+  def state=(state)
+    @state = state
+  end
+
  private
   def transit(event)
     callbacks = @callbacks_for[event][@state]
     @state = @transitions_for[event][@state]
     callbacks.each { |callback| callback.call(event) }
     true
+  end
+
+  def msg(event)
+    "State: #{@state}; Event: #{event}"
   end
 end
