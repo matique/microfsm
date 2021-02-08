@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description = %Q{MicroFSM implements a minimal/simple Finite-State Machine (FSM). Transitions are triggered by events. Actions for a transition can be added as callbacks.}
   s.authors  = ['Dittmar Krall']
   s.email    = 'dittmar.krall@matique.de'
-  s.homepage = 'http://www.matique.com'
+  s.homepage = 'https://github.com/matique'
   s.license = "MIT"
 
   s.files = `git ls-files`.split("\n")
