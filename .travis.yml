@@ -1,10 +1,15 @@
 language: ruby
+sudo: false
 
-bundle config set without production
-script: "bundle exec rake test"
+bundler_args: --without production
+# bundle config set without production
+script: 'bundle exec rake test'
 
 rvm:
-   - 2.7.2  # 2020-10-26
+  - 2.7.2  # 2020-10-26
+
+matrix:
+  fast_finish: true
 
 notifications:
   email: false

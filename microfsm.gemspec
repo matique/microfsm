@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/matique'
   s.license = "MIT"
 
+  s.metadata['source_code_uri'] = 'https://github.com/matique/microfsm'
+
   s.files = `git ls-files`.split("\n")
 
   s.add_development_dependency 'bundler'

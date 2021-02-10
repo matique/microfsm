@@ -39,6 +39,7 @@ require 'microfsm'
 fsm = MicroFSM.new(:new) # Initial state.
 
 # Define the possible transitions for each event.
+#   Template: fsm.when(<event>, <from> => <to>)
 fsm.when(:confirm, :new => :confirmed)
 fsm.when(:ignore, :new => :ignored)
 fsm.when(:reset, :confirmed => :new, :ignored => :new)
