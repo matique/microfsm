@@ -2,7 +2,6 @@ MicroFSM
 ========
 
 [![Gem Version](https://badge.fury.io/rb/microfsm.svg)](https://badge.fury.io/rb/microfsm)
-[![Build Status](https://travis-ci.org/matique/microfsm.svg?branch=master)](https://travis-ci.org/matique/microfsm)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
 Transitions are triggered by events.

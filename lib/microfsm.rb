@@ -5,7 +5,7 @@ class MicroFSM
   InvalidState = Class.new(ArgumentError)
   InvalidTransition = Class.new(ArgumentError)
 
-  attr_reader :state
+  attr_accessor :state
 
   def initialize(initial_state)
     @state = initial_state
@@ -23,7 +23,7 @@ class MicroFSM
 
       @transitions_for[event][from] = to
       @callbacks_for[event][from] ||= []
-      @callbacks_for[event][from] << block if block_given?
+      @callbacks_for[event][from] << block if block
     end
     self
   end
@@ -53,10 +53,6 @@ class MicroFSM
 
   def states
     @transitions_for.values.map(&:to_a).flatten.uniq.sort
-  end
-
-  def state=(state)
-    @state = state
   end
 
  private
