@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.authors  = ['Dittmar Krall']
   s.email    = 'dittmar.krall@matique.de'
   s.homepage = 'https://github.com/matique'
-  s.license = "MIT"
+  s.license  = "MIT"
+  s.platform = Gem::Platform::RUBY
 
   s.metadata['source_code_uri'] = 'https://github.com/matique/microfsm'
 
