@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microfsm (0.1.2)
+    microfsm (0.1.3)
 
 GEM
   remote: https://rubygems.org/
@@ -50,4 +50,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.2.17
+   2.2.15
