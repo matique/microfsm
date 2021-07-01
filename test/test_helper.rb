@@ -1,10 +1,10 @@
-if ENV['COVERAGE']
-  require 'simplecov'
+if ENV["COVERAGE"]
+  require "simplecov"
   SimpleCov.start do
-    add_filter '/test/'
+    add_filter "/test/"
   end
 end
 
-require 'minitest/autorun'
+require "minitest/autorun"
 
-require 'microfsm'
+require "microfsm"

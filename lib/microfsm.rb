@@ -55,7 +55,8 @@ class MicroFSM
     @transitions_for.values.map(&:to_a).flatten.uniq.sort
   end
 
- private
+  private
+
   def transit(event)
     callbacks = @callbacks_for[event][@state]
     @state = @transitions_for[event][@state]

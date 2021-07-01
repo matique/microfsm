@@ -1,10 +1,10 @@
-require 'test_helper'
+require "test_helper"
 
 describe MicroFSM do
-  let (:fsm) {
+  let(:fsm) {
     MicroFSM.new(:pending)
-            .when(:confirm, pending: :confirmed) { @state = "Confirmed" }
-            .when(:reset, confirmed: :pending) { @state = "Pending" }
+      .when(:confirm, pending: :confirmed) { @state = "Confirmed" }
+      .when(:reset, confirmed: :pending) { @state = "Pending" }
   }
 
   def test_executes_callbacks_during_transition

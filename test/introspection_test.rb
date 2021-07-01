@@ -1,11 +1,11 @@
-require 'test_helper'
+require "test_helper"
 
 describe MicroFSM do
-  let (:fsm) {
+  let(:fsm) {
     MicroFSM.new(:pending)
-            .when(:confirm, pending: :confirmed)
-            .when(:ignore, pending: :ignored)
-            .when(:reset, confirmed: :pending, ignored: :pending)
+      .when(:confirm, pending: :confirmed)
+      .when(:ignore, pending: :ignored)
+      .when(:reset, confirmed: :pending, ignored: :pending)
   }
 
   def test_returns_an_array_with_the_defined_events
