@@ -1,6 +1,5 @@
 MicroFSM
 ========
-
 [![Gem Version](https://badge.fury.io/rb/microfsm.svg)](https://badge.fury.io/rb/microfsm)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
