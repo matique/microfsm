@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.summary = %(Minimal Finite State Machine.)
   s.description = %{MicroFSM implements a minimal/simple Finite-State Machine (FSM). Transitions are triggered by events. Actions for a transition can be added as callbacks.}
   s.authors = ["Dittmar Krall"]
-  s.email = "dittmar.krall@matique.de"
-  s.homepage = "https://github.com/matique"
+  s.email = "dittmar.krall@matiq.com"
+  s.homepage = "https://matiq.com"
   s.license = "MIT"
   s.platform = Gem::Platform::RUBY
 
