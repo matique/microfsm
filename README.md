@@ -14,24 +14,18 @@ Please feel free to use any of them if they fit better to your work.
 The MicroFSM code consists of less than 100 locs.
 No magic, no niceties, just an implementation using Ruby hashes.
 
-Installation
-------------
+## Installation
 
-~~~~
+As usual:
+```ruby
 # Gemfile
 gem "microfsm"
+```
+and run "bundle install".
 
-$ bundle install.
+## Usage
 
-# or manually
-
-$ [sudo] gem install microfsm
-~~~~
-
-Usage
------
-
-~~~~
+```ruby
 require 'microfsm'
 
 fsm = MicroFSM.new(:new) # Initial state.
@@ -53,12 +47,12 @@ fsm.state              #=> :new
 
 fsm.trigger(:ignore)   #=> true
 fsm.state              #=> :ignored
-~~~~
+```
 
 You can also ask if an event will trigger a change in state.
 Following the example above:
 
-~~~~
+```ruby
 fsm.state              #=> :ignored
 
 fsm.trigger?(:ignore)  #=> false
@@ -66,17 +60,17 @@ fsm.trigger?(:reset)   #=> true
 
 # And the state is preserved, because you were only asking.
 fsm.state              #=> :ignored
-~~~~
+```
 
 Actions
 -------
 
 Adding actions to a transition is trivial:
 
-~~~~
+```ruby
 fsm.when(:confirm, new: :confirmed) { |event| count += 1 }
 fsm.when(:confirm, new: :confirmed) { |event| foo(event) }
-~~~~
+```
 
 Two actions/callbacks are triggered in the previous example.
 
@@ -86,7 +80,7 @@ Miscellaneous
 
 Finally, you can list possible events or states:
 
-~~~~
+```ruby
 # All possible events
 fsm.events #=> [:confirm, :ignore, :reset]
 
@@ -95,14 +89,14 @@ fsm.triggerable_events #=> [:confirm, :ignore]
 
 # All possible states
 fsm.states #=> [:new, :confirmed, :ignored]
-~~~~
+```
 
 And, the state can be set (which may be useful for testing purposes):
 
-~~~~
+```ruby
 fsm.state = :new
 fsm.state              #=> :new
-~~~~
+```
 
 Check the examples directory for more information.
 
@@ -111,3 +105,10 @@ Links
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)
 - [micromachine](https://github.com/soveran/micromachine)
+
+## Miscellaneous
+
+Copyright (c) 2021-2022 Dittmar Krall (www.matiq.com),
+released under the MIT license:
+
+* https://opensource.org/licenses/MIT
