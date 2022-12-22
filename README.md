@@ -1,5 +1,5 @@
-MicroFSM
-========
+# MicroFSM
+
 [![Gem Version](https://badge.fury.io/rb/microfsm.svg)](https://badge.fury.io/rb/microfsm)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
@@ -32,9 +32,9 @@ fsm = MicroFSM.new(:new) # Initial state.
 
 # Define the possible transitions for each event.
 #   Template: fsm.when(<event>, <from> => <to>)
-fsm.when(:confirm, :new => :confirmed)
-fsm.when(:ignore, :new => :ignored)
-fsm.when(:reset, :confirmed => :new, :ignored => :new)
+fsm.when(:confirm, new: :confirmed)
+fsm.when(:ignore, new: :ignored)
+fsm.when(:reset, confirmed: :new, ignored: :new)
 
 fsm.trigger(:confirm)  #=> true
 fsm.state              #=> :confirmed
@@ -62,8 +62,7 @@ fsm.trigger?(:reset)   #=> true
 fsm.state              #=> :ignored
 ```
 
-Actions
--------
+## Actions
 
 Adding actions to a transition is trivial:
 
@@ -75,8 +74,7 @@ fsm.when(:confirm, new: :confirmed) { |event| foo(event) }
 Two actions/callbacks are triggered in the previous example.
 
 
-Miscellaneous
--------------
+## Miscellaneous
 
 Finally, you can list possible events or states:
 
@@ -100,8 +98,7 @@ fsm.state              #=> :new
 
 Check the examples directory for more information.
 
-Links
------
+## Links
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)
 - [micromachine](https://github.com/soveran/micromachine)
