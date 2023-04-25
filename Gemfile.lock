@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microfsm (0.1.4)
+    microfsm (0.1.6)
 
 GEM
   remote: https://rubygems.org/
@@ -44,7 +44,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bundler
   microfsm!
   minitest
   observr
