@@ -1,6 +1,7 @@
 # MicroFSM
 
 [![Gem Version](https://badge.fury.io/rb/microfsm.svg)](https://badge.fury.io/rb/microfsm)
+[![GEM Downloads](https://img.shields.io/gem/dt/microfsm?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/microfsm)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
 Transitions are triggered by events.
@@ -106,6 +107,4 @@ Check the examples directory for more information.
 ## Miscellaneous
 
 Copyright (c) 2021-2023 Dittmar Krall (www.matiq.com),
-released under the MIT license:
-
-* https://opensource.org/licenses/MIT
+released under the [MIT license](https://opensource.org/licenses/MIT).
