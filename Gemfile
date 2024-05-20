@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 gemspec
 
+gem "rails"
+
 group :test do
   gem "cuco"
   gem "ricecream"
-  gem "rubocop", require: false
   gem "simplecov", require: false
+  gem "standard", require: false
 end
