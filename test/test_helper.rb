@@ -6,5 +6,4 @@ if ENV["COVERAGE"]
 end
 
 require "minitest/autorun"
-
-require "microfsm"
+require "microfsm/microfsm"

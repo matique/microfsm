@@ -1,5 +1,5 @@
 $LOAD_PATH.push File.expand_path("lib", __dir__)
-require "version"
+require "microfsm/version"
 
 Gem::Specification.new do |s|
   s.name = "microfsm"
