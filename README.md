@@ -97,7 +97,7 @@ fsm.state = :new
 fsm.state              #=> :new
 ```
 
-Check the examples directory for more information.
+Check the _examples_ directory for more information.
 
 ## Links
 

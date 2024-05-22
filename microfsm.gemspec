@@ -12,7 +12,10 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.platform = Gem::Platform::RUBY
 
-  s.files = `git ls-files`.split("\n")
+  s.files = Dir["lib/**/*"]
+  s.files += Dir["examples/**/*"]
+  s.extra_rdoc_files = Dir["README.md", "MIT-LICENSE"]
 
   s.add_development_dependency "minitest"
+  s.add_development_dependency "rake"
 end
