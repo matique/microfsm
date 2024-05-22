@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microfsm (0.1.7.x)
+    microfsm (0.1.8)
 
 GEM
   remote: https://rubygems.org/
