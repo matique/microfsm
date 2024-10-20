@@ -8,18 +8,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby_version: ["3.0", "3.3"]
+        ruby_version: ["3.2", "3.3"]
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby_version }}
-#          bundler-cache: true
       - name: Bundle install
         run: |
+          bundle config set frozen false
           bundle config path /home/runner/bundle
           bundle install
           bundle update
