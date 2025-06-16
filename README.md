@@ -1,10 +1,10 @@
 # MicroFSM
 
-[![Gem Version](https://badge.fury.io/rb/microfsm.svg)](https://badge.fury.io/rb/microfsm)
-[![GEM Downloads](https://img.shields.io/gem/dt/microfsm?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/microfsm)
-[![rake](https://github.com/matique/microfsm/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/microfsm/actions/workflows/rake.yml)
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
+[![Gem Version](https://img.shields.io/gem/v/microfsm?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/microfsm)
+[![Downloads](https://img.shields.io/gem/dt/microfsm?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/microfsm)
+[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/microfsm/rake.yml?logo=github)](https://github.com/matique/microfsm/actions/workflows/rake.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-168AFE.svg)](https://github.com/standardrb/standard)
+[![MIT License](https://img.shields.io/badge/license-MIT-168AFE.svg)](http://choosealicense.com/licenses/mit/)
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
 Transitions are triggered by events.
