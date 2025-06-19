@@ -2,9 +2,6 @@
 coverage/
 .watchr
 
-*.gem
-*.log
-*.lock
 **/*.gem
 **/*.log
 **/*.lock
