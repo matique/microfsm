@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microfsm (0.1.11)
+    microfsm (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -130,7 +130,7 @@ CHECKSUMS
   listen (3.9.0) sha256=db9e4424e0e5834480385197c139cb6b0ae0ef28cc13310cfd1ca78377d59c67
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   micro-optparse (1.2.1) sha256=b9cc0e2b4987776ca78dcbf59ce72c2bf6fd805fe56a0f4a94f9a2b0c68044e4
-  microfsm (0.1.11)
+  microfsm (0.2.0)
   minitest (6.0.1) sha256=7854c74f48e2e975969062833adc4013f249a4b212f5e7b9d5c040bf838d54bb
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parser (3.3.10.0) sha256=ce3587fa5cc55a88c4ba5b2b37621b3329aadf5728f9eafa36bbd121462aabd6
