@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = Dir["lib/**/*"]
   s.files += Dir["examples/**/*"]
   s.extra_rdoc_files = Dir["README.md", "MIT-LICENSE"]
-  s.required_ruby_version = "~> 3"
+  s.required_ruby_version = ">= 3"
 
   s.add_development_dependency "minitest"
   s.add_development_dependency "rake"

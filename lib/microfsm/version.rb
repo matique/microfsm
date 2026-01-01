@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class MicroFSM
   VERSION = "0.1.11" # 2025-06-19
   # VERSION = "0.1.10" # 2024-10-20

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class MicroFSM
   InvalidEvent = Class.new(NoMethodError)
   InvalidState = Class.new(ArgumentError)

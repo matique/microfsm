@@ -9,7 +9,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby_version: [head, "3.4", "3.2"]
-        # ruby_version: ["3.2", "3.3"]
     runs-on: ubuntu-latest
 
     steps:
