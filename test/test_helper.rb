@@ -5,5 +5,7 @@ if ENV["COVERAGE"]
   end
 end
 
+ENV["RAILS_ENV"] = "test"
+
 require "minitest/autorun"
 require "microfsm"
