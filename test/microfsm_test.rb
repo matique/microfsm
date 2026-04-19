@@ -8,19 +8,19 @@ describe MicroFSM do
       .when(:reset, confirmed: :idle, ignored: :idle)
   }
 
-  def test_trigger_changes_the_state
+  it "changes the state" do
     assert fsm.trigger?(:confirm)
     assert fsm.trigger(:confirm)
     assert_equal :confirmed, fsm.state
   end
 
-  def test_preserves_the_state_if_transition_is_not_possible
+  it "preserves the state if transition is not possible" do
     refute fsm.trigger?(:reset)
     refute fsm.trigger(:reset)
     assert_equal :idle, fsm.state
   end
 
-  def test_multiple_transitions
+  it "tests multiple transitions" do
     fsm.trigger(:confirm)
     assert_equal :confirmed, fsm.state
 

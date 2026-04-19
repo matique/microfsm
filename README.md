@@ -71,11 +71,11 @@ fsm.state              #=> :ignored
 Adding an action to a transition is trivial:
 
 ```ruby
-fsm.when(:confirm, new: :confirmed) { |event| count += 1 }
+fsm.when(:confirm, new: :confirmed) { |event, next_state|
+  count += 1
+  next_state # returning nil will disable the transition
+}
 ```
-
-Action/callback are triggered in the previous example.
-
 
 ## Miscellaneous
 
