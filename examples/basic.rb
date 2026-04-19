@@ -2,10 +2,10 @@ require "microfsm"
 
 # This example can be run with ruby -I lib/ ./examples/basic.rb
 
-fsm = MicroFSM.new(:pending)
-  .when(:confirm, pending: :confirmed)
-  .when(:ignore, pending: :ignored)
-  .when(:reset, confirmed: :pending, ignored: :pending)
+fsm = MicroFSM.new(:idle)
+  .when(:confirm, idle: :confirmed)
+  .when(:ignore, idle: :ignored)
+  .when(:reset, confirmed: :idle, ignored: :idle)
 
 puts "Should print Confirmed, Reset and Ignored:"
 

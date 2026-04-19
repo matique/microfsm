@@ -2,10 +2,10 @@ require "test_helper"
 
 describe MicroFSM do
   let(:fsm) {
-    MicroFSM.new(:pending)
-      .when(:confirm, pending: :confirmed)
-      .when(:ignore, pending: :ignored)
-      .when(:reset, confirmed: :pending, ignored: :pending)
+    MicroFSM.new(:idle)
+      .when(:confirm, idle: :confirmed)
+      .when(:ignore, idle: :ignored)
+      .when(:reset, confirmed: :idle, ignored: :idle)
   }
 
   def test_returns_an_array_with_the_defined_events
@@ -17,6 +17,6 @@ describe MicroFSM do
   end
 
   def test_returns_an_array_with_the_defined_states
-    assert_equal %i[confirmed ignored pending], fsm.states
+    assert_equal %i[confirmed idle ignored], fsm.states
   end
 end

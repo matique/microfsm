@@ -2,10 +2,10 @@ require "test_helper"
 
 describe MicroFSM, "robustness" do
   let(:fsm) {
-    MicroFSM.new(:pending)
-      .when(:confirm, pending: :confirmed)
-      .when(:ignore, pending: :ignored)
-      .when(:reset, confirmed: :pending, ignored: :pending)
+    MicroFSM.new(:idle)
+      .when(:confirm, idle: :confirmed)
+      .when(:ignore, idle: :ignored)
+      .when(:reset, confirmed: :idle, ignored: :idle)
   }
 
   def test_raises_an_error_if_an_invalid_event_is_triggered

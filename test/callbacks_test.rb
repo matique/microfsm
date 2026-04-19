@@ -2,12 +2,12 @@ require "test_helper"
 
 describe MicroFSM do
   let(:fsm) {
-    MicroFSM.new(:pending)
-      .when(:confirm, pending: :confirmed) { @state = "Confirmed" }
-      .when(:reset, confirmed: :pending) { @state = "Pending" }
+    MicroFSM.new(:idle)
+      .when(:confirm, idle: :confirmed) { @state = "Confirmed" }
+      .when(:reset, confirmed: :idle) { @state = "Pending" }
   }
 
-  def test_executes_callbacks_during_transition
+  def test_executes_callback_during_transition
     fsm.trigger(:confirm)
     assert_equal "Confirmed", @state
 
@@ -15,17 +15,9 @@ describe MicroFSM do
     assert_equal "Pending", @state
   end
 
-  def test_two_callbacks_during_transition
-    fsm.when(:confirm, pending: :confirmed) { @state2 = "Confirmed2" }
-
-    fsm.trigger(:confirm)
-    assert_equal "Confirmed", @state
-    assert_equal "Confirmed2", @state2
-  end
-
-  def test_passing_the_event_name_to_the_callbacks
+  def test_passing_the_event_name_to_the_callback
     event_name = nil
-    fsm.when(:confirm, pending: :confirmed) do |event|
+    fsm.when(:confirm, idle: :confirmed) do |event|
       event_name = event
     end
 

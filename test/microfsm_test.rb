@@ -2,10 +2,10 @@ require "test_helper"
 
 describe MicroFSM do
   let(:fsm) {
-    MicroFSM.new(:pending)
-      .when(:confirm, pending: :confirmed)
-      .when(:ignore, pending: :ignored)
-      .when(:reset, confirmed: :pending, ignored: :pending)
+    MicroFSM.new(:idle)
+      .when(:confirm, idle: :confirmed)
+      .when(:ignore, idle: :ignored)
+      .when(:reset, confirmed: :idle, ignored: :idle)
   }
 
   def test_trigger_changes_the_state
@@ -17,7 +17,7 @@ describe MicroFSM do
   def test_preserves_the_state_if_transition_is_not_possible
     refute fsm.trigger?(:reset)
     refute fsm.trigger(:reset)
-    assert_equal :pending, fsm.state
+    assert_equal :idle, fsm.state
   end
 
   def test_multiple_transitions
@@ -25,12 +25,12 @@ describe MicroFSM do
     assert_equal :confirmed, fsm.state
 
     fsm.trigger(:reset)
-    assert_equal :pending, fsm.state
+    assert_equal :idle, fsm.state
 
     fsm.trigger(:ignore)
     assert_equal :ignored, fsm.state
 
     fsm.trigger(:reset)
-    assert_equal :pending, fsm.state
+    assert_equal :idle, fsm.state
   end
 end
