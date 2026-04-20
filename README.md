@@ -77,6 +77,13 @@ fsm.when(:confirm, new: :confirmed) { |event, next_state|
 }
 ```
 
+## Version 1.*
+
+*Actions* have been enhanced:
+
+- next_state: a second parameter has been added
+- a return value is expected (see example above)
+
 ## Miscellaneous
 
 Finally, you can list possible events or states:
