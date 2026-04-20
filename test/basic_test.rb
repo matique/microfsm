@@ -2,41 +2,41 @@ require "test_helper"
 
 describe MicroFSM, "basics" do
   let(:event) { :event }
-  let(:initial) { :initial }
+  let(:initial) { :idle }
   let(:state_run) { :run }
 
   def setup
     @fsm = MicroFSM.new(initial)
   end
 
-  def test_class
+  it "checks class" do
     assert_kind_of MicroFSM, @fsm
   end
 
-  def test_defines_initial_state
+  it "checks initial_state" do
     assert_equal initial, @fsm.state
   end
 
-  def test_returns_an_array_with_the_defined_events
+  it "no events; returns an empty array" do
     assert_equal %i[], @fsm.events
   end
 
-  def test_list_the_available_events_for_the_current_state
+  it "no triggerable_events; returns an empty array" do
     assert_equal %i[], @fsm.triggerable_events
   end
 
-  def test_returns_an_array_with_the_defined_states
+  it "no states; returns an empty array" do
     assert_equal %i[], @fsm.states
   end
 
-  def test_state_assign
+  it "assigns state" do
     new_state = :unknown
     refute_equal new_state, @fsm.state
     @fsm.state = new_state
     assert_equal new_state, @fsm.state
   end
 
-  def test_when_concatenation
+  it "test when_concatenation" do
     fsm2 = @fsm.when(event, initial => state_run)
     assert_equal @fsm, fsm2
     assert_equal [event], @fsm.events

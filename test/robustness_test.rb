@@ -2,25 +2,25 @@ require "test_helper"
 
 describe MicroFSM, "robustness" do
   let(:fsm) {
-    MicroFSM.new(:pending)
-      .when(:confirm, pending: :confirmed)
-      .when(:ignore, pending: :ignored)
-      .when(:reset, confirmed: :pending, ignored: :pending)
+    MicroFSM.new(:idle)
+      .when(:confirm, idle: :confirmed)
+      .when(:ignore, idle: :ignored)
+      .when(:reset, confirmed: :idle, ignored: :idle)
   }
 
-  def test_raises_an_error_if_an_invalid_event_is_triggered
+  it "raises an error if an invalid_event is triggered" do
     assert_raises(MicroFSM::InvalidEvent) do
       fsm.trigger(:random_event)
     end
   end
 
-  def test_raises_error_if_trigger_from_incompatible_state
+  it "raises an error if trigger from incompatible state" do
     assert_raises(MicroFSM::InvalidState) do
       fsm.trigger!(:reset)
     end
   end
 
-  def test_raises_an_error_if_a_transition_is_overwritten
+  it "raises an error if a transition is overwritten" do
     fsm = MicroFSM.new(:init)
 
     fsm.when(:trigger, init: :started)

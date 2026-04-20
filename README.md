@@ -8,7 +8,7 @@
 
 MicroFSM implements a minimal/simple Finite-State Machine (FSM).
 Transitions are triggered by events.
-Actions for a transition can be added as callbacks.
+An action for a transition can be added as a callback.
 
 Finite-State Machine are described elsewhere, e.g. Wikipedia.
 
@@ -68,15 +68,21 @@ fsm.state              #=> :ignored
 
 ## Actions
 
-Adding actions to a transition is trivial:
+Adding an action to a transition is trivial:
 
 ```ruby
-fsm.when(:confirm, new: :confirmed) { |event| count += 1 }
-fsm.when(:confirm, new: :confirmed) { |event| foo(event) }
+fsm.when(:confirm, new: :confirmed) { |event, next_state|
+  count += 1
+  next_state # returning nil will disable the transition
+}
 ```
 
-Two actions/callbacks are triggered in the previous example.
+## Version 1.*
 
+*Actions* have been enhanced:
+
+- next_state: a second parameter has been added
+- a return value is expected (see example above)
 
 ## Miscellaneous
 

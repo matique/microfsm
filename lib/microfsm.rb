@@ -1,32 +1,44 @@
+require "ricecream"
+
 class MicroFSM
   InvalidEvent = Class.new(NoMethodError)
   InvalidState = Class.new(ArgumentError)
   InvalidTransition = Class.new(ArgumentError)
 
   attr_accessor :state
+  attr_accessor :timed
+  attr_accessor :previous_utc
+  attr_accessor :current_utc
 
   def initialize(initial_state)
     @state = initial_state
+    @timed = false
     @transitions_for = {}
-    @callbacks_for = {}
+    @callback_for = {}
   end
 
   def when(event, transitions, &block)
     @transitions_for[event] ||= {}
-    @callbacks_for[event] ||= {}
+    @callback_for[event] ||= {}
+    @timed = true if block
 
     transitions.each do |from, to|
       nto = @transitions_for[event][from]
       raise InvalidTransition if nto && nto != to
 
       @transitions_for[event][from] = to
-      @callbacks_for[event][from] ||= []
-      @callbacks_for[event][from] << block if block
+      @callback_for[event][from] = block if block
+      @current_utc = Time.now.utc if block
     end
     self
   end
 
   def trigger(event)
+    if @timed
+      @previous_utc = @current_utc
+      @current_utc = Time.now.utc
+    end
+
     trigger?(event) and transit(event)
   end
 
@@ -56,10 +68,10 @@ class MicroFSM
   private
 
   def transit(event)
-    callbacks = @callbacks_for[event][@state]
-    @state = @transitions_for[event][@state]
-    callbacks.each { |callback| callback.call(event) }
-    true
+    callback = @callback_for[event][@state]
+    next_state = @transitions_for[event][@state]
+    next_state = callback.call(event, next_state) if callback
+    @state = next_state if next_state
   end
 
   def msg(event)

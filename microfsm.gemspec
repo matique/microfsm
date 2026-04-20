@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name = "microfsm"
   s.version = MicroFSM::VERSION
   s.summary = %(Minimal Finite State Machine.)
-  s.description = %{MicroFSM implements a minimal/simple Finite-State Machine (FSM). Transitions are triggered by events. Actions for a transition can be added as callbacks.}
+  s.description = %{MicroFSM implements a minimal/simple Finite-State Machine (FSM). Transitions are triggered by events. An action for a transition can be added as a callback.}
   s.authors = ["Dittmar Krall"]
   s.email = "dittmar.krall@matiq.com"
   s.homepage = "https://github.com/matique/microfsm"
